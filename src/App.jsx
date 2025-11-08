@@ -1,28 +1,39 @@
-import { useState } from 'react'
+import Hero from './components/Hero';
+import Details from './components/Details';
+import Gallery from './components/Gallery';
+import RSVP from './components/RSVP';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="font-['Inter'] text-rose-900 bg-white">
+      {/* Navigation */}
+      <header className="sticky top-0 z-50 backdrop-blur bg-white/60 border-b border-rose-100">
+        <div className="container mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
+          <a href="#home" className="font-semibold tracking-wide text-rose-700">Asha & Bima</a>
+          <nav className="hidden md:flex items-center gap-6 text-rose-700/90">
+            <a href="#details" className="hover:text-rose-900">Detail</a>
+            <a href="#gallery" className="hover:text-rose-900">Galeri</a>
+            <a href="#rsvp" className="hover:text-rose-900">RSVP</a>
+          </nav>
+          <a href="#rsvp" className="px-4 py-2 rounded-full bg-rose-600 text-white text-sm shadow hover:bg-rose-700">Konfirmasi</a>
         </div>
-      </div>
+      </header>
+
+      {/* Sections */}
+      <Hero />
+      <Details />
+      <Gallery />
+      <RSVP />
+
+      {/* Footer */}
+      <footer className="py-10 bg-rose-50/60 border-t border-rose-100">
+        <div className="container mx-auto px-6 md:px-10 text-center text-rose-700/80">
+          <p>Terima kasih telah menjadi bagian dari hari spesial kami.</p>
+          <p className="mt-2 text-sm">Dibuat dengan cinta dan bunga-bunga.</p>
+        </div>
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
